@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Collaborate cards</title>
+  <meta name="description" content="Generate ONS content ideas">
+  <meta name="author" content="Henry lau">
+
+  <meta property="og:title" content="Online guess who with digital publishing">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Generate ONS content ideas">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,bold" rel="stylesheet">
+  <style>
+    * {
+      font-family: "Open Sans";
+    }
+
+    div.item {
+      border: 0.5rem solid #206095;
+      margin: 5px;
+      padding: 10px;
+      float: left;
+      width: 150px;
+      height: 150px;
+    }
+
+    button.button3 {
+      display: inline-block;
+      padding: 0.3em 1.2em;
+      margin: 0 0.3em 0.3em 0;
+      border-radius: 2em;
+      border:none;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      color: #FFFFFF;
+      background-color: #27A0CC;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    button.button3:hover {
+      background-color: #003C57;
+    }
+
+    @media all and (max-width:30em) {
+      button.button3 {
+        display: block;
+        margin: 0.2em auto;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div>
+    <button class="button3">Randomise</button>
+  </div>
+
+  <div id="container"></div>
+
+  <script src="https://cdn.ons.gov.uk/vendor/d3/4.13.0/d3.min.js"></script>
+
+  <script>
+    d3.csv('data.csv', function(data) {
+
+
+      d3.select('button').on('click', function() {
+        todraw = []
+        drawn = []
+        for (i = 0; i < data.columns.length; i++) {
+          todraw[i] = data.map(function(d) {
+            return d[data.columns[i]]
+          }).filter(function(d) {
+            return d != ""
+          })
+          drawn[i] = todraw[i][Math.floor(Math.random() * todraw[i].length)]
+        }
+
+        d3.select('#container').selectAll('*').remove()
+        div = d3.select('#container').selectAll('div').data(drawn).enter().append('div').attr('class', 'item')
+        div.append('h3').text(function(d, i) {
+          return data.columns[i]
+        })
+        div.append('p').text(function(d) {
+          return d
+        })
+
+      })
+    })
+  </script>
+</body>
+
+</html>
