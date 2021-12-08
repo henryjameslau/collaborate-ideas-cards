@@ -71,18 +71,24 @@
 
   <script>
     d3.csv('data.csv', function(data) {
+      checkboxes=data.columns.map(function(d){return false})
+      drawn = []
 
-
-      d3.select('button').on('click', function() {
+      function drawCards(){
         todraw = []
-        drawn = []
+
+
         for (i = 0; i < data.columns.length; i++) {
-          todraw[i] = data.map(function(d) {
-            return d[data.columns[i]]
-          }).filter(function(d) {
-            return d != ""
-          })
-          drawn[i] = todraw[i][Math.floor(Math.random() * todraw[i].length)]
+          if(checkboxes[i]==false){
+            todraw[i] = data.map(function(d) {
+              return d[data.columns[i]]
+            }).filter(function(d) {
+              return d != ""
+            })
+            drawn[i] = todraw[i][Math.floor(Math.random() * todraw[i].length)]
+          }else{
+            drawn[i]=drawn[i]
+          }
         }
 
         d3.select('#container').selectAll('*').remove()
@@ -93,8 +99,13 @@
         div.append('p').text(function(d) {
           return d
         })
+        div.append('input').attr('type','checkbox').attr('id',function(d,i){return data.columns[i].replace(/\s/g, '')}).attr('class','checkbox').property('checked',function(d,i){if(checkboxes[i]==true){return true}}).on('change',function(d,i){checkboxes[i]=!checkboxes[i]})
+        div.append('label').attr('for',function(d,i){return data.columns[i].replace(/\s/g, '')}).text("Lock")
 
-      })
+
+      }
+
+      d3.select('button').on('click', drawCards)
     })
   </script>
 </body>
