@@ -1,0 +1,15 @@
+# collaborate-ideas-cards
+A tool to help shape citizen content ideas for analysis.
+
+[Try it out](https://onsvisual.github.io/collaborate-ideas-cards/)
+
+After thinking a lot about all the futures stuff (horizon scanning, driver mapping, scenarios, back-casting) I thought it's all based around the policy cycle which is not quite what ONS does. A lot of other people have done horizon scanning already and written it up into [trends](https://www.gov.uk/government/collections/trend-deck-spring-2021) and drivers (climate change, automation, ageing population, greater interconnectivity, shifting global economies) so it doesn't really make sense to do it all again. 
+
+After a long think, I feel like we should try using cards to help with ideation to shock/force us into some constraints to encourage creativity. Some previous examples include Brian Eno's [oblique strategies](http://stoney.sb.org/eno/oblique.html) and in the futures world there is [The Thing from the Future](https://situationlab.org/project/the-thing-from-the-future/), or [Forks in the Road](https://forksinthetimeline.com/) where you are given a scenario and you have to imagine the impact on a thing or the world.
+
+On the journalism side there's is [journalism cards](http://journalism.cards/) and in the [explainer post](https://medium.com/@digidickinson/journalism-cards-ideation-for-journalism-cddc89d1dbef) about them, the creator looks at some core aspects to journalism, some of which aren't relevant to us, but I feel this is the closest thing to what we need.
+
+You can shuffle through different **audiences** and we could adapt it to be more ONS specific (young adults, disabled, poorer pensioners), which **news value** we're trying to appeal to (celebrity, novelty, good news, bad news, conflict, drama, magnitude), the goal of the piece (storytelling, watchdog) , which **question** we're trying to answer (who, what, when, where, why, how) , what **need** we're trying to fulfil (e.g. inform, entertain, personal context).We could add in some other ONS bits like the **cross cutting lenses** (inequality by location, inequality between people e.g. gender or age, pandemic response, Brexit, access e.g. travel time, deprivation), **ONS taxonomy/datasets** (economy, business, trade, wellbeing, labour market, personal finances, housing, population, health, education, death), **geographical level** (national, subnational, neighbourhood) or **timeline** (in a few months, in a year, in 5 years, in 10 years, in 20 years, in 50 years).
+
+I think we could use these paths through topics for example if we take social care, we could spin the deck and come up with questions like, who is a carer? where is the future workforce for carers going to come from? when will we reach peak caring need? how much of our caring workforce is from abroad? what's the average pay of a carer, is this too little, how does this compare to other countries? How many people are full time and also have caring responsibility, how many are part time, did they go to part time to help with care?
+
